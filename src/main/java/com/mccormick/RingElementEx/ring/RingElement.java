@@ -1,14 +1,14 @@
 package com.mccormick.RingElementEx.ring;
 
-public interface Ring {
+public interface RingElement {
 
 	double getDigit();
 
 	void decrementDigit();
 
-	Ring getNext();
+	RingElement getNext();
 
-	void setNext(Ring next);
+	void setNext(RingElement next);
 
 	int getLength();
 }

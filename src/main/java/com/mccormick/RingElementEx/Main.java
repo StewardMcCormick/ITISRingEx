@@ -1,8 +1,8 @@
 package com.mccormick.RingElementEx;
 
 import com.mccormick.RingElementEx.exception.IllegalRingArgumentException;
-import com.mccormick.RingElementEx.ring.Ring;
-import com.mccormick.RingElementEx.ring.RingImpl;
+import com.mccormick.RingElementEx.ring.RingElement;
+import com.mccormick.RingElementEx.ring.RingElementImpl;
 
 import java.util.InputMismatchException;
 import java.util.Random;
@@ -17,7 +17,7 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 
-		Ring rings;
+		RingElement rings;
 		try {
 			int l = in.nextInt();
 
@@ -30,9 +30,9 @@ public class Main {
 		printDecrementedRings(rings);
 	}
 
-	private static void printDecrementedRings(Ring rings) {
-		Ring prev = rings;
-		Ring curr = rings.getNext();
+	private static void printDecrementedRings(RingElement rings) {
+		RingElement prev = rings;
+		RingElement curr = rings.getNext();
 
 		int l = rings.getLength();
 		while (l > 0) {
@@ -49,18 +49,18 @@ public class Main {
 		}
 	}
 
-	private static Ring initRingList(int length) throws IllegalRingArgumentException {
+	private static RingElement initRingList(int length) throws IllegalRingArgumentException {
 		if (length <= 0) {
 			throw new IllegalRingArgumentException(String.format("Illegal length argument: %d, must be greater then 0", length));
 		}
 
-		Ring[] result = new Ring[length];
+		RingElement[] result = new RingElement[length];
 
-		RingImpl currRing = new RingImpl(random.nextFloat(-RINGS_RANGE, RINGS_RANGE));
-		RingImpl nextRing;
+		RingElementImpl currRing = new RingElementImpl(random.nextFloat(-RINGS_RANGE, RINGS_RANGE));
+		RingElementImpl nextRing;
 
 		for (int i = 0; i < length; i++) {
-			nextRing = new RingImpl(random.nextFloat(-RINGS_RANGE, RINGS_RANGE));
+			nextRing = new RingElementImpl(random.nextFloat(-RINGS_RANGE, RINGS_RANGE));
 			if (i != length - 1) {
 				currRing.setNext(nextRing);
 			} else {
