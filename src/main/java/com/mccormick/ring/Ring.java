@@ -7,4 +7,8 @@ public interface Ring {
 	void decrementDigit();
 
 	Ring getNext();
+
+	void setNext(Ring next);
+
+	int getLength();
 }
