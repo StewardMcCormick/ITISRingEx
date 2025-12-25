@@ -12,6 +12,8 @@ public class Main {
 
 	private static final Random random = new Random();
 
+	private static final int RINGS_RANGE = 10;
+
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 
@@ -54,11 +56,11 @@ public class Main {
 
 		Ring[] result = new Ring[length];
 
-		RingImpl currRing = new RingImpl(random.nextFloat(-5, 5));
+		RingImpl currRing = new RingImpl(random.nextFloat(-RINGS_RANGE, RINGS_RANGE));
 		RingImpl nextRing;
 
 		for (int i = 0; i < length; i++) {
-			nextRing = new RingImpl(random.nextFloat(-5, 5));
+			nextRing = new RingImpl(random.nextFloat(-RINGS_RANGE, RINGS_RANGE));
 			if (i != length - 1) {
 				currRing.setNext(nextRing);
 			} else {
