@@ -1,8 +1,8 @@
-package com.mccormick;
+package com.mccormick.RingElementEx;
 
-import com.mccormick.exception.IllegalRingArgumentException;
-import com.mccormick.ring.Ring;
-import com.mccormick.ring.RingImpl;
+import com.mccormick.RingElementEx.exception.IllegalRingArgumentException;
+import com.mccormick.RingElementEx.ring.Ring;
+import com.mccormick.RingElementEx.ring.RingImpl;
 
 import java.util.InputMismatchException;
 import java.util.Random;

@@ -1,10 +1,10 @@
-package com.mccormick.ring;
+package com.mccormick.RingElementEx.ring;
 
-public class RingImpl implements Ring {
+public class RingImpl implements com.mccormick.RingElementEx.ring.Ring {
 
 	private float digit;
 
-	private Ring next;
+	private com.mccormick.RingElementEx.ring.Ring next;
 
 	public RingImpl(float digit) {
 		this.digit = digit;
@@ -21,16 +21,16 @@ public class RingImpl implements Ring {
 	}
 
 	@Override
-	public Ring getNext() {
+	public com.mccormick.RingElementEx.ring.Ring getNext() {
 		return this.next;
 	}
 
-	public void setNext(Ring next) {
+	public void setNext(com.mccormick.RingElementEx.ring.Ring next) {
 		this.next = next;
 	}
 
 	public int getLength() {
-		Ring curr = getNext();
+		com.mccormick.RingElementEx.ring.Ring curr = getNext();
 		int res = 1;
 		while (curr != null && curr != this) {
 			res++;

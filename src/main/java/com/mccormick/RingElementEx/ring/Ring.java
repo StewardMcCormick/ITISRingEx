@@ -1,4 +1,4 @@
-package com.mccormick.ring;
+package com.mccormick.RingElementEx.ring;
 
 public interface Ring {
 
